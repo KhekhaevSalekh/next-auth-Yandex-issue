@@ -12,7 +12,7 @@ export default function ProtectedPage() {
     return (
       <>
         <h1>Signed in as {session.user?.email}</h1>
-        <h1>Сессия есть вы на главной</h1>
+        You are signed in!
         <button onClick={() => signOut()}>Sign out</button>
       </>
     );
@@ -20,13 +20,8 @@ export default function ProtectedPage() {
     return (
       <>
         <h1>Not signed in</h1>
-        <button onClick={() => signIn("google",{redirect:true, callbackUrl:'/'})}>Sign in with google</button>
-        <button onClick={() => signIn("yandex",{redirect:false, callbackUrl:'/'}).then((response) => {
-          console.log('rrrrr', response)
-        if (response.url) {
-          window.location.assign(response.url); // This handles the post-sign-in redirect
-        }
-      })}>Sign in with Yandex</button>
+        <button onClick={() => signIn("google")}>Sign in with google</button>
+        <button onClick={() => signIn("yandex")}>Sign in with Yandex</button>
         <button onClick={() => signIn("github")}>Sign in with github</button>
       </>
     );
