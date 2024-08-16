@@ -14,8 +14,6 @@ Environmen:
     Edge: Chromium (127.0.2651.74)
     Internet Explorer: 11.0.19041.4355
   npmPackages:
-    @auth/core: ^0.34.2 => 0.34.2
-    @auth/hasura-adapter: ^1.4.2 => 1.4.2
     next: ^14.1.0 => 14.1.0
     next-auth: ^4.24.7 => 4.24.7
     react: ^18 => 18.3.1
