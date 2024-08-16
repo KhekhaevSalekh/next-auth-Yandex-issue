@@ -123,8 +123,8 @@ For the Host, enter: http://localhost:3000.
 ## Getting Started Project
 Here is an example of my `.env.local` file:
 ```
-NEXTAUTH_URL=http://localhost:3000/
-NEXT_PUBLIC_HOME_URL=http://localhost:3000/
+NEXTAUTH_URL=http://localhost:3000
+NEXT_PUBLIC_HOME_URL=http://localhost:3000
 
 NEXTAUTH_SECRET=
 
