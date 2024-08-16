@@ -164,4 +164,4 @@ I attempted many solutions, but the most significant ones I remember are listed 
 - If you run the project and open it in Google Chrome, then select 'Slow 3G' in the network settings of the DevTools, the issue disappears.
 
 ## Solutions:
-- I discovered a solution where clicking the SIGN IN button opens the website in a new tab. However, this behavior isn't ideal. The website should open in the same tab instead.
+- I found a solution where clicking the SIGN IN button opens the website in a new tab. However, this behavior isn't ideal. The website should open in the same tab instead.
