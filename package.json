@@ -9,10 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth/core": "^0.34.2",
-    "@auth/hasura-adapter": "^1.4.2",
-    "@skillrecordings/next-auth-hasura-adapter": "^0.0.2",
-    "axios": "^1.7.4",
     "jsonwebtoken": "^9.0.2",
     "logging-service": "^1.0.1",
     "next": "^14.1.0",
