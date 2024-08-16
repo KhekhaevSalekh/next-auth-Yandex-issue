@@ -162,5 +162,5 @@ I attempted many solutions, but the most significant ones I remember are listed 
 - Investigated whether using HTTP vs. HTTPS affects the problem (I deployed on Vercel).
 - Experimented with various parameters for the authorization, token, and userInfo properties of the Yandex adapter.
 
-## What do I notice during this attempt:
+## What did I notice:
 - If you run the project and open it in Google Chrome, then select 'Slow 3G' in the network settings of the DevTools, the issue disappears.
