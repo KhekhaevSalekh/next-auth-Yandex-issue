@@ -1,11 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-In this project you will see the issue with Yandex provider. 
-The issue is: when you are not in database (you are not authorized) and press sign in with Yandex you will get error INVALID_GRANT (CODE HAS EXPIRED). Although you are already in database. And you need press sign in button again for Yandex. For Goggle and GitHub all work as excepted.
+In this project, you will observe an issue with the Yandex provider. The problem occurs when you are not in the database (not authorized) and attempt to sign in with Yandex. You receive an 'INVALID_GRANT (CODE HAS EXPIRED)' error, even though you are already in the database. To successfully sign in with Yandex, you need to press the sign-in button again. However, the process works as expected for Google and GitHub
 
+Environmen:
+```
+  System:
+    OS: Windows 10 10.0.19045
+    CPU: (8) x64 AMD Ryzen 5 1400 Quad-Core Processor
+    Memory: 11.94 GB / 23.93 GB
+  Binaries:
+    Node: 20.16.0 - C:\Program Files\nodejs\node.EXE
+    Yarn: 1.22.21 - ~\AppData\Roaming\npm\yarn.CMD
+    npm: 10.8.1 - C:\Program Files\nodejs\npm.CMD
+  Browsers:
+    Edge: Chromium (127.0.2651.74)
+    Internet Explorer: 11.0.19041.4355
+  npmPackages:
+    @auth/core: ^0.34.2 => 0.34.2
+    @auth/hasura-adapter: ^1.4.2 => 1.4.2
+    next: ^14.1.0 => 14.1.0
+    next-auth: ^4.24.7 => 4.24.7
+    react: ^18 => 18.3.1
+```
 ## Getting Started Hasura
 
-You need Hasura. I use docker-compose.yaml. Нou need input PG_DATABASE_URL. 
-After you run Hasura click on the SQL button. Input this code:
+1. Setup Hasura using Docker Compose:
+- Ensure you have Docker installed on your system.
+- Navigate to the `Hasura` folder where your `docker-compose.yaml` file is located.
+
+2. Modify docker-compose.yaml:
+- Open the docker-compose.yaml file.
+- Locate the environment variable `PG_DATABASE_URL` (I'm using neon.tech. It is free and easy to setup).
+- Input the correct `PG_DATABASE_URL` for your Postgres database.
+  
+3. Run Hasura:
+
+- Open a terminal and navigate to the Hasura folder.
+- Run the following command to start Hasura:
+```bash
+docker-compose up
+```
+
+4. Access Hasura Console:
+- After Hasura is running, open your web browser and go to the Hasura console.
+- Click on the SQL button in the console.
+- Input SQL Code:
+
 ```sql
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
@@ -72,15 +110,18 @@ ALTER TABLE ONLY public.sessions
     ADD CONSTRAINT "sessions_userId_fkey" FOREIGN KEY ("userId") REFERENCES public.users(id) ON UPDATE RESTRICT ON DELETE CASCADE;
 ```
 and click RUN. 
-After this you need add all suggested relations for all four tables. Choose table and press Relationship button. You will see suggested relationships.
+
+After this, you need to add all suggested relationships for the four tables. To do this, select a table and click on the Relationships button. You will see the suggested relationships, which you can then add.
 
 ## Getting Started Yandex Oauth API
-Go to https://oauth.yandex.ru and create app. 
-For redirect URI I write: http://localhost:3000/api/auth/callback/yandex
-For Host: http://localhost:3000
+Go to https://oauth.yandex.ru and create an app.
+
+For the Redirect URI, enter: http://localhost:3000/api/auth/callback/yandex.
+
+For the Host, enter: http://localhost:3000.
 
 ## Getting Started Project
-Example of my .env.local file:
+Here is an example of my `.env.local` file:
 ```
 NEXTAUTH_URL=http://localhost:3000/
 NEXT_PUBLIC_HOME_URL=http://localhost:3000/
@@ -101,6 +142,9 @@ HASURA_PROJECT_ENDPOINT=http://localhost:8080/v1/graphql
 HASURA_ADMIN_SECRET=myadminsecretkey
 
 ```
+You can use Google and GitHub IDs and Secrets to verify that they work correctly.
+
+Go to the project folder. Create your `.env.local` file. Run the following commands:
 ```
 npm install
 ```
@@ -111,21 +155,5 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##What I tried to do to fix this issue. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
