@@ -155,5 +155,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-##What I tried to do to fix this issue. 
+## What I tried to do to fix this issue: 
+What I tried to do to fix this issue: I attempted many solutions, but the most significant ones I remember are listed below. I will continue to add more as I recall them and as I try new ones.
 
+- Tried multiple combinations of Next.js and NextAuth versions.
+- Investigated whether using HTTP vs. HTTPS affects the problem (I deployed on Vercel).
+- Experimented with various parameters for the authorization, token, and userInfo properties of the Yandex adapter.
+
+## What do I notice during this attempt:
+- If you run the project and open it in Google Chrome, then select 'Slow 3G' in the network settings of the DevTools, the issue disappears.
