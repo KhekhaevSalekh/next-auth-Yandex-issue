@@ -156,7 +156,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## What I tried to do to fix this issue: 
-What I tried to do to fix this issue: I attempted many solutions, but the most significant ones I remember are listed below. I will continue to add more as I recall them and as I try new ones.
+I attempted many solutions, but the most significant ones I remember are listed below. I will continue to add more as I recall them and as I try new ones.
 
 - Tried multiple combinations of Next.js and NextAuth versions.
 - Investigated whether using HTTP vs. HTTPS affects the problem (I deployed on Vercel).
