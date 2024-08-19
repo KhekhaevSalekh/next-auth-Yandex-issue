@@ -162,3 +162,10 @@ I attempted many solutions, but the most significant ones I remember are listed 
 
 ## What did I notice:
 - If you run the project and open it in Google Chrome, then select 'Slow 3G' in the network settings of the DevTools, the issue disappears.
+
+## Different approachs
+
+- First one is by opening second tab. After this you can choose different ways how you will go:
+  1) stay in second tab
+  2) close second tab after authorization and continue in the first tab
+  
