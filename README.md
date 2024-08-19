@@ -1,3 +1,5 @@
+Reproduction project for issue: https://github.com/nextauthjs/next-auth/issues/11611.
+
 In this project, you will observe an issue with the Yandex provider. The problem occurs when you are not in the database (not authorized) and attempt to sign in with Yandex. You receive an 'INVALID_GRANT (CODE HAS EXPIRED)' error, even though you are already in the database. To successfully sign in with Yandex, you need to press the sign-in button again. However, the process works as expected for Google and GitHub
 
 Environmen:
