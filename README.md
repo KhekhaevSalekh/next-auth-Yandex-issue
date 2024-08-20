@@ -77,7 +77,9 @@ I attempted many solutions, but the most significant ones I remember are listed 
 
 ## Different approachs
 
-- First one is by opening second tab. After this you can choose different ways how you will go:
-  1) stay in second tab
-  2) close second tab after authorization and continue in the first tab
+1) First one is by opening second tab. After this you can choose different ways how you will go:
+- stay in second tab 
+- close second tab after authorization and continue in the first tab
+
+2) Second one without need of second tab. In Yandex Oauth console change `REDIRECT_URI` to `http://localhost:3000/api/customYandex`. Then in this api you can get url from request and take `code`, `cid`, and other stuff to do some logic and deliver controll to next-auth again. 
   
