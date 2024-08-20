@@ -21,7 +21,7 @@ Environmen:
     react: ^18 => 18.3.1
 ```
 ## Getting Started Adaptor
-Set any database and the corresponding adaptor from next-auth.
+Set up any database and the corresponding adaptor from next-auth.
 
 ## Getting Started Yandex Oauth API
 Go to https://oauth.yandex.ru and create an app.
